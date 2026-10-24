@@ -471,21 +471,21 @@ main > section {
   gap: 32px 24px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 640px) {
   .foot-grid {
-    grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .foot-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
 .foot-brand {
   grid-column: 1 / -1;
-  max-width: 22em;
-}
-
-@media (min-width: 900px) {
-  .foot-brand {
-    grid-column: auto;
-  }
+  max-width: 30em;
 }
 
 .foot-brand p {
