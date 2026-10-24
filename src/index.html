@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>net-merge: use all your internet connections at once</title>
+    <meta
+      name="description"
+      content="A free app for Windows, macOS and Linux that uses your Wi-Fi, Ethernet and phone hotspot at the same time. No account, no server, no VPN."
+    />
+    <link rel="canonical" href="https://net-merge.org/" />
+    <link rel="icon" href="../public/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../public/icon.png" />
+    <meta name="theme-color" content="#f3f6f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1712" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://net-merge.org/" />
+    <meta property="og:title" content="net-merge: use all your internet connections at once" />
+    <meta
+      property="og:description"
+      content="Wi-Fi, Ethernet and your phone's hotspot, added up. Free for Windows, macOS and Linux."
+    />
+    <meta property="og:image" content="https://net-merge.org/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./main.ts"></script>
+  </head>
+  <body>
+    <a class="skip" href="#install">Skip to install</a>
+
+    <header class="top">
+      <a class="brand" href="/"><img src="../public/icon.svg" alt="" width="28" height="28" />net-merge</a>
+      <nav aria-label="Project">
+        <a id="version" href="https://github.com/rohit267/net-merge/releases/latest">Releases</a>
+        <a id="stars" href="https://github.com/rohit267/net-merge">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Use all your internet connections at the same time.</h1>
+        <p class="lead">
+          net-merge adds up your Wi-Fi, Ethernet and phone hotspot, so downloads, games and browsers
+          get the speed of all of them. Free for Windows, macOS and Linux.
+        </p>
+
+        <div class="install" id="install">
+          <div class="tabs" role="tablist" aria-label="Your computer">
+            <button role="tab" id="tab-windows" data-os="windows" aria-controls="command" aria-selected="true">Windows</button>
+            <button role="tab" id="tab-macos" data-os="macos" aria-controls="command" aria-selected="false" tabindex="-1">macOS</button>
+            <button role="tab" id="tab-linux" data-os="linux" aria-controls="command" aria-selected="false" tabindex="-1">Linux</button>
+          </div>
+          <div class="command" id="command" role="tabpanel" aria-labelledby="tab-windows">
+            <code id="cmd">irm https://raw.githubusercontent.com/rohit267/net-merge/main/install.ps1 | iex</code>
+            <button class="copy" id="copy" type="button">Copy</button>
+          </div>
+          <p class="hint" id="hint">
+            Paste it into PowerShell and approve the admin prompt. Antivirus blocked it?
+            <a href="https://github.com/rohit267/net-merge/releases/latest/download/net-merge-setup.exe">Download net-merge-setup.exe</a>
+            and double-click it.
+          </p>
+          <p class="hint on-phone" id="phone" hidden>
+            net-merge runs on computers. Open this page on your Windows, Mac or Linux computer to install it.
+          </p>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <figure class="map">
+        <svg viewBox="0 0 600 290" role="img" aria-labelledby="map-title map-desc">
+          <title id="map-title">How net-merge spreads your connections</title>
+          <desc id="map-desc">
+            Connections from your apps go through net-merge, which sends each one over Wi-Fi, Ethernet or a
+            phone hotspot. They all reach the internet.
+          </desc>
+          <defs>
+            <path id="p-wifi" d="M40 160 H138 Q150 160 158.5 151.5 L231.5 78.5 Q240 70 252 70 H348 Q360 70 368.5 78.5 L441.5 151.5 Q450 160 462 160 H560" />
+            <path id="p-eth" d="M40 160 H560" />
+            <path id="p-phone" d="M40 160 H138 Q150 160 158.5 168.5 L231.5 241.5 Q240 250 252 250 H348 Q360 250 368.5 241.5 L441.5 168.5 Q450 160 462 160 H560" />
+          </defs>
+          <g class="lines">
+            <use href="#p-wifi" class="line wifi" />
+            <use href="#p-phone" class="line phone" />
+            <use href="#p-eth" class="line eth" />
+            <path d="M40 160 H150" class="line trunk" />
+            <path d="M450 160 H560" class="line out" />
+          </g>
+          <g class="labels">
+            <text x="300" y="54" text-anchor="middle">Wi-Fi</text>
+            <text x="300" y="144" text-anchor="middle">Ethernet</text>
+            <text x="300" y="234" text-anchor="middle">Phone hotspot</text>
+            <text x="28" y="124">Your apps</text>
+            <text x="572" y="124" text-anchor="end">Internet</text>
+            <text x="95" y="198" text-anchor="middle" class="brandlabel">net-merge</text>
+          </g>
+          <g class="trains" aria-hidden="true">
+            <circle r="5.5"><animateMotion dur="3s" repeatCount="indefinite" begin="0s"><mpath href="#p-wifi" /></animateMotion></circle>
+            <circle r="5.5"><animateMotion dur="3s" repeatCount="indefinite" begin="-1s"><mpath href="#p-wifi" /></animateMotion></circle>
+            <circle r="5.5"><animateMotion dur="3s" repeatCount="indefinite" begin="-2s"><mpath href="#p-wifi" /></animateMotion></circle>
+            <circle r="5.5"><animateMotion dur="2.4s" repeatCount="indefinite" begin="-0.4s"><mpath href="#p-eth" /></animateMotion></circle>
+            <circle r="5.5"><animateMotion dur="2.4s" repeatCount="indefinite" begin="-1.2s"><mpath href="#p-eth" /></animateMotion></circle>
+            <circle r="5.5"><animateMotion dur="2.4s" repeatCount="indefinite" begin="-2s"><mpath href="#p-eth" /></animateMotion></circle>
+            <circle r="5.5"><animateMotion dur="3.8s" repeatCount="indefinite" begin="-0.6s"><mpath href="#p-phone" /></animateMotion></circle>
+            <circle r="5.5"><animateMotion dur="3.8s" repeatCount="indefinite" begin="-2.5s"><mpath href="#p-phone" /></animateMotion></circle>
+          </g>
+          <g class="stations">
+            <circle cx="40" cy="160" r="13" />
+            <circle cx="560" cy="160" r="13" />
+          </g>
+        </svg>
+        <figcaption>
+          A real test with Wi-Fi, an Android phone over USB and an iPhone hotspot, 9 downloads at once:
+          232 to 303 Mbit/s together. The fastest one alone gave about 121 Mbit/s.
+        </figcaption>
+      </figure>
+
+      <section class="fit">
+        <div>
+          <h2>Where it helps</h2>
+          <p>Apps that open many connections at once get faster:</p>
+          <ul>
+            <li>Steam and other game downloads</li>
+            <li>Web browsers loading pages</li>
+            <li>Download managers like IDM, and torrents</li>
+            <li>Cloud uploads like Google Drive</li>
+            <li>System updates</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Where it does not</h2>
+          <p>
+            One single connection always uses one link. So one big file from one server does not get
+            faster.
+          </p>
+          <p>
+            Browsers can split a download into parts. In Chrome, Edge or Brave, turn on
+            <code>chrome://flags/#enable-parallel-downloading</code> (use <code>edge://</code> or
+            <code>brave://</code> in those).
+          </p>
+        </div>
+      </section>
+
+      <section class="see">
+        <h2>It lives in your menu bar or tray</h2>
+        <p>See each connection's speed, pause merging, or turn it off.</p>
+        <figure class="video">
+          <video id="demo" controls preload="metadata" playsinline poster="../public/tray-menu-macos.png" width="700" height="430" data-src="/demo.mp4"></video>
+          <figcaption>A Mac with Wi-Fi and an Android phone. The menu shows both working at once, and the download reaches about 326 Mbit/s.</figcaption>
+        </figure>
+        <div class="shots">
+          <figure>
+            <img src="../public/tray-tooltip.png" width="122" height="86" alt="Tooltip: merging, the speed of each adapter and the total" loading="lazy" />
+            <figcaption>Windows: hover the icon</figcaption>
+          </figure>
+          <figure>
+            <img src="../public/tray-menu.png" width="404" height="182" alt="Menu: the total, each adapter's speed and connections, the IPv6 option, Pause merging and Quit" loading="lazy" />
+            <figcaption>Windows: the menu</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="facts">
+        <h2>Good to know</h2>
+        <dl>
+          <div>
+            <dt>No account, no server, no VPN.</dt>
+            <dd>It all runs on your computer. Your traffic goes straight out through your own connections.</dd>
+          </div>
+          <div>
+            <dt>Safe to stop.</dt>
+            <dd>If net-merge quits or crashes, your internet keeps working as before.</dd>
+          </div>
+          <div>
+            <dt>Smart about slow links.</dt>
+            <dd>Faster connections get more traffic. A connection with no internet gets none until it works again.</dd>
+          </div>
+          <div>
+            <dt>Your phone counts.</dt>
+            <dd>
+              No second connection? Plug your phone in over USB and turn on USB tethering, or join its hotspot.
+              <a href="https://github.com/rohit267/net-merge#add-a-second-connection">How to add one</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Open source.</dt>
+            <dd>MIT license. <a href="https://github.com/rohit267/net-merge">Read the code on GitHub</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="more">
+        <h2>Other ways to install</h2>
+        <p>
+          Homebrew, apt, dnf, zypper, apk, pacman, Nix, the Windows installer and a portable zip:
+          <a href="https://github.com/rohit267/net-merge#install">step by step in the README</a>.
+          Something wrong? Check <a href="https://github.com/rohit267/net-merge#troubleshooting">Troubleshooting</a>
+          or <a href="https://github.com/rohit267/net-merge/issues/new/choose">open an issue</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-main">
+        <p><img src="../public/icon.svg" alt="" width="20" height="20" />net-merge is free and open source.</p>
+        <ul>
+          <li><a href="https://github.com/rohit267/net-merge">Source code</a></li>
+          <li><a href="https://github.com/rohit267/net-merge/blob/main/CHANGELOG.md">What changed</a></li>
+          <li><a href="mailto:security@net-merge.org">Report a security problem</a></li>
+          <li><a href="https://buymeacoffee.com/rohit267">Buy me a coffee</a></li>
+          <li><a href="https://paypal.me/champdev">Donate with PayPal</a></li>
+        </ul>
+      </div>
+      <div class="foot-more">
+        <p>
+          From the same developer:
+          <a href="https://github.com/champdev-me/routengine">RoutEngine</a>, pick the connection for each app on Windows,
+          and <a href="https://dormhost.dev/?utm_source=net-merge&amp;utm_medium=website">DormHost</a>, put your college
+          project online with 30 days free.
+        </p>
+        <p><a href="https://github.com/net-merge/website">This website's code</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
