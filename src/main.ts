@@ -120,6 +120,11 @@ select(detectOs());
 // Set here, not in the HTML: the bundled copy of the video is served without byte ranges, which Safari needs.
 const demo = byId<HTMLVideoElement>("demo");
 if (demo.dataset.src) demo.src = demo.dataset.src;
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  demo.controls = true; // no autoplay: people who turned off motion start it themselves
+} else {
+  demo.play().catch(() => (demo.controls = true));
+}
 if (onPhone) byId("phone").hidden = false;
 
 interface Stats {
@@ -131,6 +136,10 @@ fetch("/api/stats")
   .then((r) => (r.ok ? (r.json() as Promise<Stats>) : null))
   .then((s) => {
     if (s?.version) byId("version").textContent = s.version;
-    if (s?.stars) byId("stars").textContent = `GitHub, ${s.stars.toLocaleString("en-US")} stars`;
+    if (s?.stars) {
+      const n = s.stars.toLocaleString("en-US");
+      byId("stars-text").textContent = `${n} stars`;
+      byId("stars").setAttribute("aria-label", `net-merge on GitHub, ${n} stars`);
+    }
   })
   .catch(() => {});
