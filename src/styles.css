@@ -154,7 +154,7 @@ main,
 /* Hero */
 
 .hero {
-  padding-top: clamp(32px, 7vw, 88px);
+  padding-top: clamp(8px, 2.5vw, 32px);
 }
 
 @media (min-width: 900px) {
@@ -435,41 +435,101 @@ main > section {
   max-width: 40em;
 }
 
+.faq {
+  max-width: 46em;
+}
+
+.qa {
+  margin-top: 28px;
+}
+
+.qa h3 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+
+.qa p {
+  color: var(--muted);
+  margin: 0;
+}
+
 /* Footer */
 
 .foot {
   margin-top: clamp(72px, 10vw, 128px);
-  padding-block: 32px 48px;
+  padding-block: 40px 48px;
   border-top: 1px solid var(--rule);
   font-size: 1rem;
   color: var(--muted);
 }
 
-.foot-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px 32px;
+.foot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 24px;
 }
 
-.foot-main p {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+@media (min-width: 900px) {
+  .foot-grid {
+    grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr));
+  }
+}
+
+.foot-brand {
+  grid-column: 1 / -1;
+  max-width: 22em;
+}
+
+@media (min-width: 900px) {
+  .foot-brand {
+    grid-column: auto;
+  }
+}
+
+.foot-brand p {
+  margin: 12px 0 0;
+}
+
+.foot h2 {
+  font-size: 1rem;
   color: var(--ink);
-  font-weight: 700;
+  margin: 0 0 12px;
+  letter-spacing: 0;
 }
 
 .foot ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.foot-more {
-  margin-top: 16px;
+.foot li {
+  margin-bottom: 8px;
+}
+
+.foot li a {
+  overflow-wrap: anywhere;
+}
+
+.foot .note {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.foot-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 32px;
+  font-size: 0.9375rem;
+}
+
+.foot-bottom p {
+  margin: 0;
   max-width: 44em;
 }

@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>net-merge: use all your internet connections at once</title>
+    <title>net-merge: combine Wi-Fi, Ethernet and mobile data</title>
     <meta
       name="description"
-      content="A free app for Windows, macOS and Linux that uses your Wi-Fi, Ethernet and phone hotspot at the same time. No account, no server, no VPN."
+      content="Free app for Windows, macOS and Linux that uses your Wi-Fi, Ethernet and phone hotspot at the same time, for faster downloads. No account, no server, no VPN."
     />
     <link rel="canonical" href="https://net-merge.org/" />
     <link rel="icon" href="../public/icon.svg" type="image/svg+xml" />
@@ -21,7 +21,34 @@
       content="Wi-Fi, Ethernet and your phone's hotspot, added up. Free for Windows, macOS and Linux."
     />
     <meta property="og:image" content="https://net-merge.org/social-preview.png" />
+    <meta property="og:site_name" content="net-merge" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="net-merge: use all your internet connections at the same time" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="net-merge: combine Wi-Fi, Ethernet and mobile data" />
+    <meta name="twitter:description" content="Wi-Fi, Ethernet and your phone's hotspot, added up. Free for Windows, macOS and Linux." />
+    <meta name="twitter:image" content="https://net-merge.org/social-preview.png" />
+    <meta name="author" content="Rohit Mahto" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "net-merge",
+        "url": "https://net-merge.org/",
+        "description": "Uses Wi-Fi, Ethernet and phone hotspots at the same time, so apps that open many connections get the speed of all of them.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "isAccessibleForFree": true,
+        "license": "https://opensource.org/licenses/MIT",
+        "downloadUrl": "https://github.com/rohit267/net-merge/releases/latest",
+        "image": "https://net-merge.org/icon.png",
+        "screenshot": "https://net-merge.org/tray-menu-macos.png",
+        "author": { "@type": "Person", "name": "Rohit Mahto", "url": "https://github.com/rohit267" },
+        "sameAs": ["https://github.com/rohit267/net-merge"]
+      }
+    </script>
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./main.ts"></script>
   </head>
@@ -209,27 +236,97 @@
           or <a href="https://github.com/rohit267/net-merge/issues/new/choose">open an issue</a>.
         </p>
       </section>
+
+      <section class="faq">
+        <h2>Questions</h2>
+        <div class="qa">
+          <h3>Can I use Wi-Fi and Ethernet at the same time?</h3>
+          <p>
+            Yes. net-merge sends each new connection over one of them, so apps that open many connections use
+            both. You only get more speed when each one has its own internet line: Wi-Fi and Ethernet from the
+            same router share one line.
+          </p>
+        </div>
+        <div class="qa">
+          <h3>Can I combine Wi-Fi and mobile data on my computer?</h3>
+          <p>
+            Yes. Connect your phone over USB and turn on USB tethering, or join its hotspot. net-merge uses it
+            next to your Wi-Fi or Ethernet.
+          </p>
+        </div>
+        <div class="qa">
+          <h3>Will one big download get faster?</h3>
+          <p>
+            Only if it uses several connections. One connection always goes over one link. Download managers,
+            Steam and browsers with parallel downloading open several, so they speed up.
+          </p>
+        </div>
+        <div class="qa">
+          <h3>Does it work with a VPN?</h3>
+          <p>
+            Not with a VPN app on the same computer: the VPN takes all the traffic first. Set up the VPN on your
+            routers instead, and net-merge works as normal.
+          </p>
+        </div>
+        <div class="qa">
+          <h3>Is it free? Does it send my data anywhere?</h3>
+          <p>
+            It is free and open source. There is no account and no server: your traffic goes straight out through
+            your own connections. The app only connects to 1.1.1.1 and 8.8.8.8 to check that each connection has
+            internet, and to GitHub to look for a new version.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="foot">
-      <div class="foot-main">
-        <p><img src="../public/icon.svg" alt="" width="20" height="20" />net-merge is free and open source.</p>
-        <ul>
-          <li><a href="https://github.com/rohit267/net-merge">Source code</a></li>
-          <li><a href="https://github.com/rohit267/net-merge/blob/main/CHANGELOG.md">What changed</a></li>
-          <li><a href="mailto:security@net-merge.org">Report a security problem</a></li>
-          <li><a href="https://buymeacoffee.com/rohit267">Buy me a coffee</a></li>
-          <li><a href="https://paypal.me/champdev">Donate with PayPal</a></li>
-        </ul>
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="/"><img src="../public/icon.svg" alt="" width="24" height="24" />net-merge</a>
+          <p>Use all your internet connections at the same time. Free and open source for Windows, macOS and Linux.</p>
+        </div>
+        <nav aria-labelledby="f-app">
+          <h2 id="f-app">App</h2>
+          <ul>
+            <li><a href="https://github.com/rohit267/net-merge/releases/latest">Download</a></li>
+            <li><a href="https://github.com/rohit267/net-merge#install">Install guide</a></li>
+            <li><a href="https://github.com/rohit267/net-merge/blob/main/CHANGELOG.md">What changed</a></li>
+            <li><a href="https://github.com/rohit267/net-merge#troubleshooting">Troubleshooting</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-project">
+          <h2 id="f-project">Project</h2>
+          <ul>
+            <li><a href="https://github.com/rohit267/net-merge">Source code</a></li>
+            <li><a href="https://github.com/rohit267/net-merge/issues/new/choose">Report a problem</a></li>
+            <li><a href="https://github.com/rohit267/net-merge/blob/main/CONTRIBUTING.md">Help build it</a></li>
+            <li><a href="https://github.com/net-merge/website">Website code</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-contact">
+          <h2 id="f-contact">Contact</h2>
+          <ul>
+            <li><a href="mailto:hello@net-merge.org">hello@net-merge.org</a></li>
+            <li><a href="mailto:security@net-merge.org">security@net-merge.org</a><span class="note">for security problems</span></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-support">
+          <h2 id="f-support">Support it</h2>
+          <ul>
+            <li><a href="https://buymeacoffee.com/rohit267">Buy me a coffee</a></li>
+            <li><a href="https://paypal.me/champdev">Donate with PayPal</a></li>
+            <li><a href="https://github.com/rohit267/net-merge/stargazers">Star it on GitHub</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="foot-more">
+      <div class="foot-bottom">
         <p>
           From the same developer:
           <a href="https://github.com/champdev-me/routengine">RoutEngine</a>, pick the connection for each app on Windows,
           and <a href="https://dormhost.dev/?utm_source=net-merge&amp;utm_medium=website">DormHost</a>, put your college
           project online with 30 days free.
         </p>
-        <p><a href="https://github.com/net-merge/website">This website's code</a></p>
+        <p>© 2026 Rohit Mahto. MIT license.</p>
       </div>
     </footer>
   </body>
