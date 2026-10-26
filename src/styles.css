@@ -116,8 +116,14 @@ main,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   padding-block: 20px;
+}
+
+.brand,
+.top nav a {
+  white-space: nowrap;
 }
 
 .brand {
@@ -149,6 +155,23 @@ main,
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+/* The line box is taller than the digits and capitals, so a centred icon sits about 2px low. */
+.gh svg {
+  position: relative;
+  top: -2px;
+}
+
+/* Phones: icon only, so the bar stays on one line (the link's aria-label still says the star count). */
+@media (max-width: 480px) {
+  .top nav {
+    gap: 16px;
+  }
+
+  #stars-text {
+    display: none;
+  }
 }
 
 /* Hero */
