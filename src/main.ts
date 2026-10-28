@@ -12,8 +12,8 @@ for (const [family, weight, file] of [
 
 type Os = "windows" | "macos" | "linux";
 
-const raw = "https://raw.githubusercontent.com/rohit267/net-merge/main";
-const setupExe = "https://github.com/rohit267/net-merge/releases/latest/download/net-merge-setup.exe";
+const raw = "https://raw.githubusercontent.com/net-merge/net-merge/main";
+const setupExe = "https://github.com/net-merge/net-merge/releases/latest/download/net-merge-setup.exe";
 
 const installs: Record<Os, { command: string; hint: () => Node[] }> = {
   windows: {

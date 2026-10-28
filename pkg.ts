@@ -3,7 +3,7 @@
 import { createHash, randomBytes } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
-const upstream = (process.env.PKG_UPSTREAM ?? "https://rohit267.github.io/net-merge").replace(/\/$/, "");
+const upstream = (process.env.PKG_UPSTREAM ?? "https://net-merge.github.io/net-merge").replace(/\/$/, "");
 const forward = ["range", "if-modified-since", "if-none-match"];
 const keep = ["content-type", "content-length", "content-range", "accept-ranges", "last-modified", "etag", "cache-control"];
 

@@ -1,6 +1,6 @@
 # net-merge.org
 
-The website of [net-merge](https://github.com/rohit267/net-merge): one page, served by [Bun](https://bun.sh).
+The website of [net-merge](https://github.com/net-merge/net-merge): one page, served by [Bun](https://bun.sh).
 
 ## Run it
 

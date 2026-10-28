@@ -1,6 +1,6 @@
 import home from "./src/index.html";
 
-const repo = "rohit267/net-merge";
+const repo = "net-merge/net-merge";
 const publicDir = `${import.meta.dir}/public`;
 const day = "public, max-age=86400";
 
