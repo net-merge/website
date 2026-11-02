@@ -489,6 +489,25 @@ main > section {
   }
 }
 
+.routengine-lead {
+  font-size: 1.1875rem;
+  color: var(--muted);
+  max-width: 44em;
+}
+
+.routengine-shot {
+  display: block;
+  margin: 28px 0;
+}
+
+.routengine-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+}
+
 .android-shot {
   margin: 0;
   justify-self: center;
